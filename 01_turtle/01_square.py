@@ -12,7 +12,8 @@ t.penup()        # lift the pen so moving won't leave a line
 t.goto(-150, 150)  # move to (x=-150, y=150) — top-left of the square
 t.pendown()      # put the pen down so drawing starts here
 
-# Draw a square: 4 sides, turn 90 degrees each time
+# Draw a square: repeat 4 times because a square has 4 equal sides,
+# turning right 90 degrees at each corner.
 for i in range(4):
     t.forward(300)
     t.right(90)
