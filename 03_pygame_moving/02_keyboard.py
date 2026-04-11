@@ -12,10 +12,10 @@ pygame.display.set_caption("Move with Arrow Keys")
 clock = pygame.time.Clock()
 
 # Player square
-player_x = WIDTH // 2
-player_y = HEIGHT // 2
-player_size = 50
-player_color = pygame.Color("deepskyblue")
+square_x = WIDTH // 2
+square_y = HEIGHT // 2
+square_size = 50
+square_color = pygame.Color("deepskyblue")
 SPEED = 5
 
 BG = pygame.Color("midnightblue")
@@ -32,21 +32,21 @@ while running:
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
-        player_x -= SPEED
+        square_x -= SPEED
     if keys[pygame.K_RIGHT]:
-        player_x += SPEED
+        square_x += SPEED
     if keys[pygame.K_UP]:
-        player_y -= SPEED
+        square_y -= SPEED
     if keys[pygame.K_DOWN]:
-        player_y += SPEED
+        square_y += SPEED
 
     # Keep player inside the window
-    player_x = max(0, min(WIDTH - player_size, player_x))
-    player_y = max(0, min(HEIGHT - player_size, player_y))
+    square_x = max(0, min(WIDTH - square_size, square_x))
+    square_y = max(0, min(HEIGHT - square_size, square_y))
 
     screen.fill(BG)
-    pygame.draw.rect(screen, player_color,
-                     (player_x, player_y, player_size, player_size),
+    pygame.draw.rect(screen, square_color,
+                     (square_x, square_y, square_size, square_size),
                      border_radius=8)
     pygame.display.flip()
 
